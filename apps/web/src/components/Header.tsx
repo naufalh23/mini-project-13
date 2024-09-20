@@ -1,6 +1,7 @@
 import Link from "next/link"
 import Wrapper from "./wrapper"
 import AvatarComp from "./avatar"
+import Image from "next/image"
 
 export const Navbar = () => {
     return (
@@ -9,8 +10,7 @@ export const Navbar = () => {
                 <Wrapper>
                     <div className="flex justify-between w-full items-center">
                         <Link href={'/'} className="flex items-center space-x-3 rtl:space-x-reverse">
-                            <img src="https://www.blogger.com/img/logo_blogger_40px_2x.png" className="h-8" alt="Blog Logo" />
-                            <span className="self-center text-2xl font-semibold whitespace-nowrap text-text_pri">Event<span className="text-secondary">X</span></span>
+                            <Image src={"/assets/logo.png"} alt="..." width={150} height={10} />
                         </Link>
                         <AvatarComp />
                     </div>

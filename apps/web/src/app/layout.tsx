@@ -3,6 +3,8 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import { Navbar } from '@/components/Header';
 import { Footer } from '@/components/Footer';
+import { ToastContainer } from 'react-toastify';
+import StoreProvider from '@/components/StoreProvider';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -13,15 +15,19 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar />
-        {children}
-        <Footer />
+        <StoreProvider>{children}</StoreProvider>
+        <ToastContainer
+          position="bottom-right"
+          autoClose={3000}
+          closeOnClick
+          draggable
+        />
       </body>
     </html>
   );

@@ -1,11 +1,18 @@
+import Image from 'next/image';
+
 export default function Carousel() {
   return (
     <div className="flex justify-center">
-      <div className="carousel w-[1320px] justify-items-center">
-        <div id="slide1" className="carousel-item relative w-full h-full">
-          <img
-            src="https://img.daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.webp"
-            className="w-[1320px] h-[596px]"
+      <div className="carousel w-[1320px] h-[596px] justify-items-center">
+        <div
+          id="slide1"
+          className="carousel-item relative w-[1320px] h-[596px]"
+        >
+          <Image
+            src={'/assets/event-0.png'}
+            alt="..."
+            layout="fill"
+            objectFit="contain"
           />
           <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
             <a href="#slide4" className="btn btn-circle">
@@ -17,9 +24,11 @@ export default function Carousel() {
           </div>
         </div>
         <div id="slide2" className="carousel-item relative w-full h-full">
-          <img
-            src="https://img.daisyui.com/images/stock/photo-1609621838510-5ad474b7d25d.webp"
-            className="w-[1320px] h-[596px]"
+          <Image
+            src={'/assets/event-2.png'}
+            alt="..."
+            layout="fill"
+            objectFit="cover"
           />
           <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
             <a href="#slide1" className="btn btn-circle">
@@ -31,9 +40,11 @@ export default function Carousel() {
           </div>
         </div>
         <div id="slide3" className="carousel-item relative w-full h-full">
-          <img
-            src="https://img.daisyui.com/images/stock/photo-1414694762283-acccc27bca85.webp"
-            className="w-[1320px] h-[596px]"
+          <Image
+            src={'/assets/event-1.jpg'}
+            alt="..."
+            layout="fill"
+            objectFit="cover"
           />
           <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
             <a href="#slide2" className="btn btn-circle">
@@ -45,9 +56,11 @@ export default function Carousel() {
           </div>
         </div>
         <div id="slide4" className="carousel-item relative w-full h-full">
-          <img
-            src="https://img.daisyui.com/images/stock/photo-1665553365602-b2fb8e5d1707.webp"
-            className="w-[1320px] h-[596px]"
+          <Image
+            src={'/assets/event-3.jpg'}
+            alt="..."
+            layout="fill"
+            objectFit="cover"
           />
           <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
             <a href="#slide3" className="btn btn-circle">
