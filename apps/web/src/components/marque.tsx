@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 export default function BrandMarquee() {
   return (
-    <div className="font-bold text-4xl text-black mb-4 justify-center text-center">
+    <div className="font-bold text-4xl text-black mb-32 justify-center text-center">
       <h1 className="text-black font-bold text-4xl mt-20 mb-4">
         Join these <span className="text-secondary">Brands</span>
       </h1>

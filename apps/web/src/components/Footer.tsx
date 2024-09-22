@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export const Footer = () => {
   return (
-    <div className="w-full h-[340px] bg-primary mt-32">
+    <div className="w-full h-[340px] bg-primary mt-auto">
       <div className="container mx-auto">
         <div className="grid grid-flow-row auto-rows-max justify-items-center pt-6 border-b-2 border-white">
           <Image src={'/assets/logo2.png'} alt="..." width={250} height={50} />

@@ -9,7 +9,7 @@ const base_url = process.env.BASE_URL_WEB || ""
 export default function ShareButton({ slug, className }: { slug: string, className: string }) {
     return (
         <div className={`${className}`}>
-            <p className=" text-xs font-bold text-gray-400 py-2 ">BAGIKAN</p>
+            <p className=" text-2xl font-bold text-black py-2 ">Share with friends</p>
             <div className="flex gap-1">
                 <TwitterButton slug={slug} url={base_url}/>
                 <WaButton slug={slug} url={base_url}/>

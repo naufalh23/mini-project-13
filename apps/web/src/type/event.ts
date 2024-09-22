@@ -32,5 +32,11 @@ export interface EventInput {
     title: string;
     content: string;
     slug: string;
+    location: string;
+    price: number;
+    discount: number;
+    capacity: number;
+    date: string;
+    eventtype: string;
     image?: File | string | null
   }

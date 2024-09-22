@@ -3,7 +3,7 @@ import Image from 'next/image';
 export default function Carousel() {
   return (
     <div className="flex justify-center">
-      <div className="carousel w-[1320px] h-[596px] justify-items-center">
+      <div className="carousel lg:w-[1320px] lg:h-[596px] justify-items-center w-1/4 h-1/4 sm:w-2/4 sm:h-2/4 md:w-3/4 md:h-3/4">
         <div
           id="slide1"
           className="carousel-item relative w-[1320px] h-[596px]"
@@ -12,7 +12,7 @@ export default function Carousel() {
             src={'/assets/event-0.png'}
             alt="..."
             layout="fill"
-            objectFit="contain"
+            objectFit="fill"
           />
           <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
             <a href="#slide4" className="btn btn-circle">

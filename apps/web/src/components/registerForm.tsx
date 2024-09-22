@@ -1,6 +1,6 @@
 "use client"
-// import { regAuthor } from "@/lib/author";
-// import { IAuthorReg } from "@/type/author";
+import { regUser } from "@/lib/author";
+import { IUserReg } from "@/type/author";
 import { ErrorMessage, Field, Form, Formik, FormikHelpers } from "formik";
 import { toast } from "react-toastify";
 import * as yup from 'yup'
@@ -14,17 +14,17 @@ const RegisterSchema = yup.object().shape({
 });
 
 export default function RegisterForm() {
-    // const onRegister = async (data: IAuthorReg, action: FormikHelpers<IAuthorReg>) => {
-    //     try {
-    //     //   const { result, ok } = await regAuthor(data)
-    //       if (!ok) throw result.msg
-    //       toast.success(result.msg)
-    //       action.resetForm()
-    //     } catch (err) {
-    //       console.log(err);
-    //       toast.error(err as string)
-    //     }
-    // }
+    const onRegister = async (data: IUserReg, action: FormikHelpers<IUserReg>) => {
+        try {
+          const { result, ok } = await regUser(data)
+          if (!ok) throw result.msg
+          toast.success(result.msg)
+          action.resetForm()
+        } catch (err) {
+          console.log(err);
+          toast.error(err as string)
+        }
+    }
     
     return (
         <Formik
@@ -35,16 +35,16 @@ export default function RegisterForm() {
             }}
             validationSchema={RegisterSchema}
             onSubmit={(values, action) => {
-                // onRegister(values, action)
+                onRegister(values, action)
             }}
         >
             {
                 () => {
                     return (
                         <Form>
-                            <div className=" min-w-[30vw]">
-                                <h2 className="text-base font-semibold leading-7 text-gray-900">Register</h2>
-                                <p className="mt-1 text-sm leading-6 text-gray-600">Use a permanent address where you can receive mail.</p>
+                            <div className="mt-10 min-w-[30vw] min-h-[450px]">
+                                <h2 className="text-2xl text-center font-bold leading-7 text-gray-900">Sign up</h2>
+                                <p className="mt-1 text-sm text-center leading-6 text-gray-600">Use a permanent address where you can receive mail.</p>
                                 <div className="mt-10">
                                     <label className="block text-sm font-medium leading-6 text-gray-900">Name</label>
                                     <div className="mt-2">
@@ -66,7 +66,7 @@ export default function RegisterForm() {
                                         <ErrorMessage name="password" component={"div"} className="text-sm text-red-500"/>
                                     </div>
                                 </div>
-                                <button type="submit" className="w-full mt-6 p-1.5 text-sm font-medium rounded-md bg-orange-500 ">Register</button>
+                                <button type="submit" className="w-full mt-6 p-1.5 text-sm font-medium rounded-md bg-secondary text-white hover:bg-slate-500 ">Register</button>
                             </div>
                         </Form>
                     )

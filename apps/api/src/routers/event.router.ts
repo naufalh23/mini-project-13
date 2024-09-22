@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { EventController } from '../controllers/event.controller';
 import { uploader } from '../middlewares/uploader';
-import { verifyToken } from '../middlewares/token';
+import { checkEO, verifyToken } from '../middlewares/token';
 
 export class EventRouter {
   private router: Router;
@@ -20,7 +20,20 @@ export class EventRouter {
       verifyToken,
       this.eventController.createEvent,
     );
+    this.router.patch(
+      '/update/:id',
+      uploader('event-', '/event').single('image'),
+      verifyToken,
+      checkEO,
+      this.eventController.updateEvent,
+    );
     this.router.get('/', this.eventController.getEvents);
+    this.router.get(
+      '/creator/events',
+      verifyToken,
+      checkEO,
+      this.eventController.getEventsByCreator,
+    );
     this.router.get('/:slug', this.eventController.getEventSlug);
   }
 

@@ -36,3 +36,16 @@ export const checkAdmin = async (req: Request, res: Response, next: NextFunction
         })
     }
 }
+
+export const checkEO = async (req: Request, res: Response, next: NextFunction) => {
+    try {
+        if (req.user?.role !== "Event_Organizer") throw "Unauthorize !"
+
+        next()
+    } catch (err) {
+        res.status(400).send({
+            status: 'error',
+            msg: err
+        })
+    }
+}

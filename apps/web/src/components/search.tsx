@@ -2,52 +2,31 @@
 
 import { Dropdown } from 'flowbite-react';
 import Wrapper from './wrapper';
+import Link from 'next/link';
 
 export default function SearchBar() {
   return (
     <Wrapper>
-      <div className="w-[1200px] h-[144px] rounded-[20px] py-[37px] px-[70px] bg-primary">
-        <div className="grid grid-cols-4">
+      <div className="flex items-center justify-center w-full h-[144px] rounded-[20px] py-auto px-4 bg-primary">
+        <div className="flex flex-warp justify-around w-full">
           <div>
             <div className="mb-[6px] text-white">Looking for</div>
-            <Dropdown
-              className="border flex rounded-md"
-              label="Dropdown button"
-              dismissOnClick={false}
-            >
-              <Dropdown.Item>Dashboard</Dropdown.Item>
-              <Dropdown.Item>Settings</Dropdown.Item>
-              <Dropdown.Item>Earnings</Dropdown.Item>
-              <Dropdown.Item>Sign out</Dropdown.Item>
-            </Dropdown>
+            <input
+                type="search"
+                placeholder="Search events"
+                className="border p-2 border-gray-500 h-10 w-full max-w-[400px] rounded-md text-text_pri"
+              />
           </div>
           <div>
-            <div className="mb-[6px] text-white">Location</div>
-            <Dropdown
-              className="border flex rounded-md"
-              label="Dropdown button"
-              dismissOnClick={false}
-            >
-              <Dropdown.Item>Dashboard</Dropdown.Item>
-              <Dropdown.Item>Settings</Dropdown.Item>
-              <Dropdown.Item>Earnings</Dropdown.Item>
-              <Dropdown.Item>Sign out</Dropdown.Item>
-            </Dropdown>
+            <div className="mb-[6px] text-white">Event Category</div>
+            <input
+                type="search"
+                placeholder="Search category"
+                className="border p-2 border-gray-500 h-10 w-full max-w-[400px] rounded-md text-text_pri"
+              />
           </div>
-          <div>
-            <div className="mb-[6px] text-white">When</div>
-            <Dropdown
-              className="border flex rounded-md"
-              label="Dropdown button"
-              dismissOnClick={false}
-            >
-              <Dropdown.Item>Dashboard</Dropdown.Item>
-              <Dropdown.Item>Settings</Dropdown.Item>
-              <Dropdown.Item>Earnings</Dropdown.Item>
-              <Dropdown.Item>Sign out</Dropdown.Item>
-            </Dropdown>
-          </div>
-          <div className="w-[70px] h-[70px] bg-secondary flex items-center justify-center rounded-md">
+          
+          <Link href={"/search"} className="w-[70px] h-[70px] btn btn-active btn-primary bg-secondary flex items-center justify-center rounded-md">
             <svg
               className="w-6 h-6 text-white"
               aria-hidden="true"
@@ -64,7 +43,7 @@ export default function SearchBar() {
                 d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"
               />
             </svg>
-          </div>
+          </Link>
         </div>
       </div>
     </Wrapper>
