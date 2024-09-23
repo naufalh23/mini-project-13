@@ -39,7 +39,7 @@ export const FieldImage: React.FC<FieldImageProps> = ({ name, label, formik, cla
             {!previewUrl && (
                 <div 
                     onClick={() => imgRef.current?.click()} 
-                    className="flex w-[100px] md:w-[150px] md:h-[150px] h-[100px] justify-center items-center border border-gray-500 border-dashed rounded-md cursor-pointer"
+                    className="flex w-full md:w-full md:h-[150px] h-[100px] justify-center items-center border border-gray-500 border-dashed rounded-md cursor-pointer"
                 >
                     +
                 </div>
@@ -47,7 +47,7 @@ export const FieldImage: React.FC<FieldImageProps> = ({ name, label, formik, cla
             {previewUrl && (
                 <div
                     onClick={() => imgRef.current?.click()} 
-                    className="flex w-[100px] md:w-[150px] md:h-[150px] h-[100px] justify-center items-center border border-gray-500 border-dashed rounded-md cursor-pointer"
+                    className="flex w-auto md:w-[200px] md:h-[150px] h-[100px] justify-center items-center border border-gray-500 border-dashed rounded-md cursor-pointer"
                 >
                     <Image 
                         src={previewUrl} 

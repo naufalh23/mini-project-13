@@ -1,7 +1,7 @@
 'use client';
 
 import RichTextEditor from './editor';
-import { useFormik } from 'formik';
+import { FormikHelpers, useFormik } from 'formik';
 import { ErrorMsg } from '@/components/Form/ErrorMessage';
 import { useEffect } from 'react';
 import { createSlug } from '@/helper/createSlug';
@@ -10,13 +10,15 @@ import FieldSelect from '@/components/Form/FieldSelect';
 import { FieldImage } from '@/components/Form/FieldImage';
 import * as Yup from 'yup';
 import { EventInput } from '@/type/event';
+import { createEvent } from '@/lib/event';
+import { toast } from 'react-toastify';
 
 export const eventSchema = Yup.object({
   title: Yup.string()
     .min(5, 'Title must be at least 5 characters long')
     .max(100, 'Title must be at most 100 characters long')
     .required('Title is required'),
-  category: Yup.string().required('Category is required'),
+  eventtype: Yup.string().required('Category is required'),
   content: Yup.string()
     .min(20, 'Content must be at least 20 characters long')
     .required('Content is required'),
@@ -58,9 +60,12 @@ const initialValues: EventInput = {
 export const FormCreate: React.FC = () => {
   const onCreate = async (data: EventInput) => {
     try {
-      console.log(data);
+      const { result, ok } = await createEvent(data)
+      if (!ok) throw result.msg
+      toast.success(result.msg)
     } catch (err) {
       console.log(err);
+      toast.error(err as string)
     }
   };
 

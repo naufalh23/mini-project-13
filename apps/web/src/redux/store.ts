@@ -34,7 +34,7 @@ const persistConfig = {
 };
 
 const rootReducer = combineReducers({
-    author: authorReducer,
+    user: authorReducer,
 });
 
 const makeConfiguredStore = () =>

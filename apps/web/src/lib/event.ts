@@ -1,3 +1,5 @@
+import { EventInput } from "@/type/event";
+
 const base_url = process.env.BASE_URL_API || 'http://localhost:8000/api';
 
 export const getEvents = async (
@@ -24,3 +26,15 @@ export const getEventSlug = async (slug: string) => {
 
   return { result, events: result.events, ok: res.ok };
 };
+
+export const createEvent = async (data: EventInput) => {
+  const res = await fetch(`${base_url}/events`, {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+          "Content-Type": "application/json"
+      }
+  })
+  const result = await res.json()
+  return { result, ok: res.ok }
+}

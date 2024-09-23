@@ -57,7 +57,7 @@ const RichTextEditor: React.FC<FieldRichTextProps> = ({ formik }) => {
           onChange={handleChange}
           modules={modules}
           formats={formats}
-          className='bg-gray-50'
+          className='bg-gray-50 text-black'
         />
   );
 };

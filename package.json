@@ -54,6 +54,7 @@
     "nodemailer": "^6.9.15",
     "path": "^0.12.7",
     "react-fast-marquee": "^1.6.5",
+    "react-loader-spinner": "^6.1.6",
     "react-quill": "^2.0.0",
     "react-redux": "^9.1.2",
     "react-share": "^5.1.0",

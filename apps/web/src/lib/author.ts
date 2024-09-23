@@ -30,7 +30,7 @@ export const verifyUser = async (token: string) => {
     const res = await fetch(`${base_url}/user/verify`, {
         method: "PATCH",
         headers: {
-            "Userization": `Bearer ${token}`
+            "Authorization": `Bearer ${token}`
         }
     })
     const result = await res.json()

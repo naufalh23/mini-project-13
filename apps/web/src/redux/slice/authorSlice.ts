@@ -9,8 +9,8 @@ const initialState: IUserState = {
     avatar: ""
 }
 
-export const authorSlice = createSlice({
-    name: "author",
+export const userSlice = createSlice({
+    name: "user",
     initialState,
     reducers: {
         loginAction: (state, action: PayloadAction<IUserState>) => {
@@ -32,5 +32,5 @@ export const authorSlice = createSlice({
     }
 })
 
-export const { loginAction, logoutAction } = authorSlice.actions
-export default authorSlice.reducer
+export const { loginAction, logoutAction } = userSlice.actions
+export default userSlice.reducer

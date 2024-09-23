@@ -27,7 +27,7 @@ export default function LoginForm() {
         if (!ok) throw result.msg
         toast.success(result.msg)
         action.resetForm()
-        dispatch(loginAction(result.author))
+        dispatch(loginAction(result.user))
         createToken(result.token)
         router.push('/')
       } catch (err) {

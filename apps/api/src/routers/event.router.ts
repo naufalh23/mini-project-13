@@ -17,7 +17,7 @@ export class EventRouter {
     this.router.post(
       '/',
       uploader('event-', '/event').single('image'),
-      verifyToken,
+      // verifyToken,
       this.eventController.createEvent,
     );
     this.router.patch(
